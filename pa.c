@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 12:03:22 by aabel             #+#    #+#             */
-/*   Updated: 2023/01/24 13:49:29 by aabel            ###   ########.fr       */
+/*   Created: 2023/01/24 13:50:01 by aabel             #+#    #+#             */
+/*   Updated: 2023/01/24 13:54:56 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include <stdarg.h>
-
-typedef struct s_list
+void	pa(t_list *list)
 {
-	void			*content;
-	int				*sa;
-	int				*sb;
-	int				*sp;
-	int				*sia;
-	int				*sib;
-	int				*sip;
-	int				argc;
-	struct s_list	*next;
-}					t_list;
+	int	i;
 
-#endif
+	i = list->sia;
+	list->sib = list->sib - 1;
+	list->sia = list->sia + 1;
+	while (i > 0)
+	{
+		swap(&list->sa[i], &list->sa[i - 1]);
+		i--;
+	}
+	list->sa[0] = list->sb[0];
+	i = 0;
+	while (i <= list->sib)
+	{
+		list->sb[i] = list->sb[i + 1];
+		i++;
+	}
+	write(1, "pa\n", 3);
+}

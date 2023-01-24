@@ -6,7 +6,7 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:08:09 by aabel             #+#    #+#             */
-/*   Updated: 2023/01/23 12:31:59 by aabel            ###   ########.fr       */
+/*   Updated: 2023/01/24 14:13:58 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,8 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	list = malloc(sizeof(t_list));
-
+	if (!list)
+		return (0);
+	if (check_args(argv, argc - 1) == -1)
+		ft_free(list);
 }

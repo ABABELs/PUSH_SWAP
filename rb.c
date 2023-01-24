@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 12:03:22 by aabel             #+#    #+#             */
-/*   Updated: 2023/01/24 13:49:29 by aabel            ###   ########.fr       */
+/*   Created: 2023/01/24 14:12:21 by aabel             #+#    #+#             */
+/*   Updated: 2023/01/24 14:13:03 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include <stdarg.h>
-
-typedef struct s_list
+void	rb(t_list *list)
 {
-	void			*content;
-	int				*sa;
-	int				*sb;
-	int				*sp;
-	int				*sia;
-	int				*sib;
-	int				*sip;
-	int				argc;
-	struct s_list	*next;
-}					t_list;
+	int	i;
 
-#endif
+	i = 0;
+	while (i + 1 < list->sib)
+	{
+		swap(&list->sb[i], &list->sb[i + 1]);
+		i++;
+	}
+	write(1, "rb\n", 3);
+}

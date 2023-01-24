@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 12:03:22 by aabel             #+#    #+#             */
-/*   Updated: 2023/01/24 13:49:29 by aabel            ###   ########.fr       */
+/*   Created: 2023/01/24 14:10:11 by aabel             #+#    #+#             */
+/*   Updated: 2023/01/24 14:10:53 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include <stdarg.h>
-
-typedef struct s_list
+void	swap(int *argv1, int *argv2)
 {
-	void			*content;
-	int				*sa;
-	int				*sb;
-	int				*sp;
-	int				*sia;
-	int				*sib;
-	int				*sip;
-	int				argc;
-	struct s_list	*next;
-}					t_list;
+	int	temp;
 
-#endif
+	temp = *argv1;
+	*argv1 = *argv2;
+	*argv2 = temp;
+}
