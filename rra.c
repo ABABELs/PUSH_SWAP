@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 14:10:11 by aabel             #+#    #+#             */
-/*   Updated: 2023/01/25 14:03:47 by aabel            ###   ########.fr       */
+/*   Created: 2023/01/25 14:11:06 by aabel             #+#    #+#             */
+/*   Updated: 2023/01/25 14:15:18 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(int *argv1, int *argv2)
+void	rra(t_list *list)
 {
-	int	temp;
+	int	i;
 
-	temp = *argv1;
-	*argv1 = *argv2;
-	*argv2 = temp;
+	i = list->sia - 1;
+	while (i > 0)
+	{
+		swap(&list->sa[i], &list->sa[i - 1]);
+		i--;
+	}
+	write(1, "rra\n", 4);
 }

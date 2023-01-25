@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 14:10:11 by aabel             #+#    #+#             */
-/*   Updated: 2023/01/25 14:03:47 by aabel            ###   ########.fr       */
+/*   Created: 2023/01/25 14:18:18 by aabel             #+#    #+#             */
+/*   Updated: 2023/01/25 14:41:27 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(int *argv1, int *argv2)
+void	rrb(t_list *list)
 {
-	int	temp;
+	int	i;
+	int	j;
 
-	temp = *argv1;
-	*argv1 = *argv2;
-	*argv2 = temp;
+	i = list->sib - 1;
+	j = 0;
+	while (i - 1 >= 0)
+	{
+		swap(&list->sb[i], &list->sb[i - 1]);
+		i--;
+	}
+	write(1, "rrb\n", 4);
 }

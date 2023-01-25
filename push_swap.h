@@ -6,7 +6,7 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:22 by aabel             #+#    #+#             */
-/*   Updated: 2023/01/24 13:49:29 by aabel            ###   ########.fr       */
+/*   Updated: 2023/01/25 14:35:36 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_list
 	int				*sib;
 	int				*sip;
 	int				argc;
+	struct s_list	*back;
 	struct s_list	*next;
 }					t_list;
 
