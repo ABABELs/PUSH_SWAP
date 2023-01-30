@@ -6,7 +6,7 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:08:09 by aabel             #+#    #+#             */
-/*   Updated: 2023/01/25 14:04:13 by aabel            ###   ########.fr       */
+/*   Updated: 2023/01/30 14:20:13 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	init_data(t_list *list)
 		free(list);
 		return (-1);
 	}
-	list->sia = list->argc;
+	list->sia = &list->argc;
 	list->sib = 0;
-	list->sip = list->argc;
+	list->sip = &list->argc;
 	return (0);
 }
 
@@ -50,6 +50,7 @@ int	main(int argc, char **argv)
 	list = malloc(sizeof(t_list));
 	if (!list)
 		return (0);
-	if (check_args(argv, argc - 1) == -1)
+	if (check_args(argc - 1, argv) == -1)
 		ft_free(list);
+	return (0);
 }
