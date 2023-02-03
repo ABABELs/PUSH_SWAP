@@ -6,33 +6,48 @@
 #    By: aabel <aabel@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 14:39:17 by aabel             #+#    #+#              #
-#    Updated: 2023/01/30 14:38:58 by aabel            ###   ########.fr        #
+#    Updated: 2023/02/03 12:10:51 by aabel            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS = push_swap.c	check_args.c	check_num.c	ft_free.c	lsttools.c	pa.c \
-	pb.c	ra.c	rb.c	rr.c	rra.c	rrb.c	rrr.c	sa.c	sb.c	\
-	swap.c	utils.c	\
+SRC = ./src/push_swap.c ./src/check_args.c ./src/check_num.c ./src/ft_free.c ./src/pa.c \
+						./src/pb.c ./src/ra.c ./src/rb.c ./src/rr.c ./src/rra.c ./src/rrb.c ./src/rrr.c ./src/sa.c ./src/sb.c \
+						./src/swap.c \
 
-INCLUDE = push_swap.h
+INCLUDE = ./inc/push_swap.h
 
 CC = gcc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
+
+LIBFT_DIR = inc/libft/
+
+DIR_SRCS = src/
+DIR_OBJS = objs/
 
 %.o: %.c
-				@${CC} ${CFLAGS} $< -o $(<:.c=.o)
+#				@${CC} ${CFLAGS} $< -o $(<:.c=.o)
+				@${CC} ${CFLAGS} -c $< -o $@
 
-OBJS = ${SRCS:.c=.o}
+SRCS = $(addprefix $(DIR_SRCS), $(addsuffix .c, $(SRC)))
+OBJS = $(addprefix $(DIR_OBJS), $(addsuffix .o, $(SRC)))
+OBJS =  ${SRC:.c=.o}
 
-all:	${NAME}
 
-${NAME}: ${OBJS} @${CC} ${SRCS} -o ${NAME}
+
+all:	$(NAME)
+
+$(NAME): $(OBJS) $(INCLUDE)
+		@make -C inc/libft
+		@${CC} ${SRC} -o ${NAME}
+		@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT_DIR)libft.a
 
 clean:
 			@${RM} ${OBJS}
+			make -C inc/libft/ clean
+			rm -r $(DIR_OBJS)
 
 fclean: 
 			@${RM} ${NAME}
