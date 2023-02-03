@@ -6,11 +6,12 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 12:19:10 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/03 11:47:14 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/03 13:10:23 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+#include "../inc/libft/libft.h"
 
 int	check_num(char *s)
 {

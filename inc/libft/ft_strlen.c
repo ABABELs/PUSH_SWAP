@@ -6,13 +6,13 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:59:59 by aabel             #+#    #+#             */
-/*   Updated: 2022/11/23 17:27:05 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/03 12:54:25 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
 	int	size;
 

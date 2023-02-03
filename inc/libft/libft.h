@@ -6,7 +6,7 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 13:34:23 by aabel             #+#    #+#             */
-/*   Updated: 2022/12/19 15:36:10 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/03 14:15:15 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <string.h>
 # include <stdarg.h>
 
-size_t	ft_strlen(const char *str);
+int		ft_strlen(const char *str);
 char	*ft_strrchr(const char *s, int c);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *str, size_t c);
@@ -42,7 +42,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *src);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char const *s, int start, int len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -63,9 +63,23 @@ int		ft_putnbr(long long n, int init);
 int		ft_putnbr_u(unsigned int n, int init);
 void	ft_init(size_t *i, int *result);
 
+// typedef struct s_list
+// {
+// 	void			*content;
+// 	struct s_list	*next;
+// }					t_list;
+
 typedef struct s_list
 {
 	void			*content;
+	int				*sa;
+	int				*sb;
+	int				*sp;
+	int				*sia;
+	int				*sib;
+	int				*sip;
+	int				argc;
+	struct s_list	*back;
 	struct s_list	*next;
 }					t_list;
 

@@ -6,7 +6,7 @@
 #    By: aabel <aabel@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 14:39:17 by aabel             #+#    #+#              #
-#    Updated: 2023/02/03 12:10:51 by aabel            ###   ########.fr        #
+#    Updated: 2023/02/03 13:08:22 by aabel            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 SRC = ./src/push_swap.c ./src/check_args.c ./src/check_num.c ./src/ft_free.c ./src/pa.c \
 						./src/pb.c ./src/ra.c ./src/rb.c ./src/rr.c ./src/rra.c ./src/rrb.c ./src/rrr.c ./src/sa.c ./src/sb.c \
-						./src/swap.c \
+						./src/swap.c ./inc/libft/ft_strlen.c \
 
 INCLUDE = ./inc/push_swap.h
 
@@ -47,7 +47,7 @@ $(NAME): $(OBJS) $(INCLUDE)
 clean:
 			@${RM} ${OBJS}
 			make -C inc/libft/ clean
-			rm -r $(DIR_OBJS)
+#			rm -r $(DIR_OBJS)
 
 fclean: 
 			@${RM} ${NAME}

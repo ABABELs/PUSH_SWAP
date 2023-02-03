@@ -6,15 +6,15 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:08:38 by aabel             #+#    #+#             */
-/*   Updated: 2022/11/08 17:16:28 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/03 13:22:56 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, int start, int len)
 {
-	unsigned int	i;
+	int				i;
 	char			*str;
 
 	if (!s)
