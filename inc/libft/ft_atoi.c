@@ -6,17 +6,24 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:50:43 by aabel             #+#    #+#             */
-/*   Updated: 2022/11/06 17:29:37 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/07 13:07:24 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_error(t_list *list, int nbr)
 {
-	int	i;
-	int	neg;
-	int	n;
+	nbr = 0;
+	list->atoierror = 1;
+	return (nbr);
+}
+
+int	ft_atoi(const char *str, t_list *list)
+{
+	int				i;
+	int				neg;
+	long long int	n;
 
 	i = 0;
 	neg = 1;
@@ -33,6 +40,10 @@ int	ft_atoi(const char *str)
 	{
 		n = n * 10 + (str[i] - '0');
 		i++;
+		if (n > ((long long int)INT_MAX + 1) && neg == -1)
+			return (ft_error(list, n));
+		if (n > INT_MAX && neg == 1)
+			return (ft_error(list, n));
 	}
 	return (neg * n);
 }

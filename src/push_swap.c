@@ -6,7 +6,7 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:08:09 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/02 15:22:38 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/07 11:59:41 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,24 @@ int	init_data(t_list *list)
 	return (0);
 }
 
+int	arg_to_int(t_list *list, int argc, char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (i != argc - 1)
+	{
+		if (check_num(argv[i + 1]) == -1)
+			return (-1);
+		list->sa[i] = ft_atoi(argv[i + 1], list);
+		if (list->atoierror == 1)
+			return (-1);
+		list->sp[i] = ft_atoi(argv[i + 1], list);
+		i++;
+	}
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*list;
@@ -51,6 +69,17 @@ int	main(int argc, char **argv)
 	if (!list)
 		return (0);
 	if (check_args(argc - 1, argv) == -1)
+		ft_free(list);
+	list->argc = argc - 1;
+	list->error = 0;
+	if (init_data(list) == -1)
+		ft_free(list);
+	if (arg_to_int(list, argc, argv) == -1)
+	{
+		ft_free(list);
+		return (0);
+	}
+	if (check_order(list) == -1)
 		ft_free(list);
 	return (0);
 }

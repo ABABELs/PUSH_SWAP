@@ -6,7 +6,7 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 13:34:23 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/03 14:15:15 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/07 13:04:49 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,27 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdarg.h>
+# include <limits.h>
+
+typedef struct s_list
+{
+	void			*content;
+	int				*sa;
+	int				*sb;
+	int				*sp;
+	int				*sia;
+	int				*sib;
+	int				*sip;
+	int				argc;
+	int				error;
+	int				atoierror;
+	struct s_list	*back;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_strlen(const char *str);
 char	*ft_strrchr(const char *s, int c);
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, t_list *list);
 void	ft_bzero(void *str, size_t c);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -62,26 +79,7 @@ int		ft_ptrlen(unsigned long long ptr);
 int		ft_putnbr(long long n, int init);
 int		ft_putnbr_u(unsigned int n, int init);
 void	ft_init(size_t *i, int *result);
-
-// typedef struct s_list
-// {
-// 	void			*content;
-// 	struct s_list	*next;
-// }					t_list;
-
-typedef struct s_list
-{
-	void			*content;
-	int				*sa;
-	int				*sb;
-	int				*sp;
-	int				*sia;
-	int				*sib;
-	int				*sip;
-	int				argc;
-	struct s_list	*back;
-	struct s_list	*next;
-}					t_list;
+int		ft_error(t_list *list, int nbr);
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);

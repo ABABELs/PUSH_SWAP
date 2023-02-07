@@ -6,7 +6,7 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:22 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/03 14:15:55 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/07 12:01:11 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,8 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdarg.h>
+# include <limits.h>
 # include "../inc/libft/libft.h"
-
-// typedef struct s_list
-// {
-// 	void			*content;
-// 	int				*sa;
-// 	int				*sb;
-// 	int				*sp;
-// 	int				*sia;
-// 	int				*sib;
-// 	int				*sip;
-// 	int				argc;
-// 	struct s_list	*back;
-// 	struct s_list	*next;
-// }					t_list;
 
 int		main(int argc, char **argv);
 int		init_data(t_list *list);
@@ -49,5 +36,7 @@ void	rrb(t_list *list);
 void	sa(int *sa);
 void	sb(int *sb);
 void	swap(int *argv1, int *argv2);
+int		arg_to_int(t_list *list, int argc, char **argv);
+int		check_order(t_list *list);
 
 #endif
