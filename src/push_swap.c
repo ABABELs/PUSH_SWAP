@@ -6,7 +6,7 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:08:09 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/07 11:59:41 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/13 13:12:03 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,24 @@ int	arg_to_int(t_list *list, int argc, char **argv)
 	return (0);
 }
 
+int	ft_choose_size(int argc, t_list *list)
+{
+	if (check_same_nums(list) == -1)
+		return (-1);
+	else
+	{
+		if (argc == 3 || argc == 4)
+			size3(list->sa, list);
+		if (argc < 7 && argc > 4)
+			size5(list->sa, list);
+		if (argc < 102 && argc > 6)
+			size100(list);
+		if (argc > 101)
+			size500(list);
+	}
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*list;
@@ -80,6 +98,9 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	if (check_order(list) == -1)
+		ft_free2(list);
+	if (ft_choose_size(argc, list) == -1)
 		ft_free(list);
+	ft_free2(list);
 	return (0);
 }
