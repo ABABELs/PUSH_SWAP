@@ -41,5 +41,6 @@ int			check_order(t_list *list);
 void		ft_free2(t_list *list);
 int			check_same_nums(t_list *list);
 static int	ft_check(t_list *list, int num, int j);
+void	    size3(int *s, t_list *list);
 
 #endif
