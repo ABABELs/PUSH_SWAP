@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:08:09 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/13 13:12:03 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/16 10:09:44 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,12 @@ int	ft_choose_size(int argc, t_list *list)
 	{
 		if (argc == 3 || argc == 4)
 			size3(list->sa, list);
-		if (argc < 7 && argc > 4)
-			size5(list->sa, list);
-		if (argc < 102 && argc > 6)
-			size100(list);
-		if (argc > 101)
-			size500(list);
+		// if (argc < 7 && argc > 4)
+		// 	size5(list->sa, list);
+		// if (argc < 102 && argc > 6)
+		// 	size100(list);
+		// if (argc > 101)
+		// 	size500(list);
 	}
 	return (0);
 }

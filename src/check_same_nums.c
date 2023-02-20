@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   check_same_nums.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:16:49 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/13 13:09:27 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/16 10:09:34 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-static int	ft_check(t_list *list, int num, int j)
+static int	ft_checks(t_list *list, int num, int j)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ int	check_same_nums(t_list *list)
 	i = 0;
 	while (i <= list->sia - 1)
 	{
-		if (ft_check(list, list->sa[i], i) == 1)
+		if (ft_checks(list, list->sa[i], i) == 1)
 			i++;
 		else
 			return (-1);

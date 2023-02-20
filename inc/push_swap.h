@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:22 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/13 13:10:27 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/16 10:09:28 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int			arg_to_int(t_list *list, int argc, char **argv);
 int			check_order(t_list *list);
 void		ft_free2(t_list *list);
 int			check_same_nums(t_list *list);
-static int	ft_check(t_list *list, int num, int j);
-void	    size3(int *s, t_list *list);
+static int	ft_checks(t_list *list, int num, int j);
+void		size3(int *s, t_list *list);
 
 #endif
