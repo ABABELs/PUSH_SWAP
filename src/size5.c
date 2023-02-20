@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_same_nums.c                                  :+:      :+:    :+:   */
+/*   size5.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 12:16:49 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/20 12:44:40 by aabel            ###   ########.fr       */
+/*   Created: 2023/02/20 13:00:59 by aabel             #+#    #+#             */
+/*   Updated: 2023/02/20 14:19:19 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	ft_checks(t_list *list, int num, int j)
+void	size5(int *s, t_list *list)
 {
 	int	i;
 
 	i = 0;
-	while (i < j)
+	if (list->sia == 5)
 	{
-		if (list->sa[i] == num)
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	check_same_nums(t_list *list)
-{
-	int	i;
-
-	i = 0;
-	while (i <= *list->sia - 1)
-	{
-		if (ft_checks(list, list->sa[i], i) == 1)
+		if (s[0] < s[1] && s[0] < s[2] && s[0] < s[3] && s[0] < s[4] && i == 0)
+		{
+			pb(list);
 			i++;
-		else
-			return (-1);
+		}
+		if (s[0] > s[1] && s[1] < s[2] && s[1] < s[3] && s[1] < s[4] && i == 0)
+		{
+			sa(list->sa);
+			pb(list);
+			i++;
+		}
 	}
-	return (0);
 }
