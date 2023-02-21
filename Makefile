@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+         #
+#    By: aabel <aabel@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 14:39:17 by aabel             #+#    #+#              #
-#    Updated: 2023/02/21 09:18:32 by arthurabel       ###   ########.fr        #
+#    Updated: 2023/02/21 14:15:57 by aabel            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,8 +48,9 @@ clean:
 			@${RM} ${OBJS}
 			make -C inc/libft/ clean
 
-fclean: 
+fclean: clean
 			@${RM} ${NAME}
+			make -C inc/libft/ fclean
 
 re: fclean all
 
