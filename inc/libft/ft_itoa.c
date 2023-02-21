@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:38:14 by aabel             #+#    #+#             */
-/*   Updated: 2022/11/09 13:16:03 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/21 09:21:35 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_itoa(int n)
 		x[0] = '-';
 	}
 	else
-		num = n;
+		num = n * sign;
 	x = ft_convert(x, num, len);
 	return (x);
 }

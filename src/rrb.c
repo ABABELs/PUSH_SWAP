@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:18:18 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/03 11:58:37 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/21 09:16:21 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 void	rrb(t_list *list)
 {
 	int	i;
-	int	j;
 
 	i = *(list->sib - 1);
-	j = 0;
 	while (i - 1 >= 0)
 	{
 		swap(&list->sb[i], &list->sb[i - 1]);

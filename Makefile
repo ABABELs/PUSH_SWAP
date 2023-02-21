@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aabel <aabel@student.42.fr>                +#+  +:+       +#+         #
+#    By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 14:39:17 by aabel             #+#    #+#              #
-#    Updated: 2023/02/20 14:17:27 by aabel            ###   ########.fr        #
+#    Updated: 2023/02/21 09:18:32 by arthurabel       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,6 @@ DIR_SRCS = src/
 DIR_OBJS = objs/
 
 %.o: %.c
-#				@${CC} ${CFLAGS} $< -o $(<:.c=.o)
 				@${CC} ${CFLAGS} -c $< -o $@
 
 SRCS = $(addprefix $(DIR_SRCS), $(addsuffix .c, $(SRC)))
@@ -48,7 +47,6 @@ $(NAME): $(OBJS) $(INCLUDE)
 clean:
 			@${RM} ${OBJS}
 			make -C inc/libft/ clean
-#			rm -r $(DIR_OBJS)
 
 fclean: 
 			@${RM} ${NAME}
