@@ -6,7 +6,7 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 13:50:01 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/03 11:56:46 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/22 14:57:01 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void	pa(t_list *list)
 		i--;
 	}
 	list->sa[0] = list->sb[0];
-	i = 0;
-	while (i <= *list->sib)
-	{
-		list->sb[i] = list->sb[i + 1];
-		i++;
-	}
+	// i = 0;
+	// while (i <= *list->sib)
+	// {
+	// 	list->sb[i] = list->sb[i + 1];
+	// 	i++;
+	// }
 	write(1, "pa\n", 3);
 }

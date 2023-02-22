@@ -6,7 +6,7 @@
 /*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:08:09 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/21 11:58:38 by aabel            ###   ########.fr       */
+/*   Updated: 2023/02/22 15:04:15 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,9 @@ int	main(int argc, char **argv)
 	list = malloc(sizeof(t_list));
 	if (!list)
 		return (0);
+//	if argc == 2;
+//	utiliser split sur argv
+//	sinon continuer comme d hab (ci dessous)
 	if (check_args(argc - 1, argv) == -1)
 		ft_free(list);
 	list->argc = argc - 1;
