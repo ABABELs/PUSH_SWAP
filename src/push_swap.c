@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:08:09 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/22 15:04:15 by aabel            ###   ########.fr       */
+/*   Updated: 2023/03/10 13:38:53 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,27 @@ int	ft_choose_size(int argc, t_list *list)
 int	main(int argc, char **argv)
 {
 	t_list	*list;
+	char	**temp_split;
 
 	if (argc == 1)
 		return (0);
 	list = malloc(sizeof(t_list));
 	if (!list)
 		return (0);
-//	if argc == 2;
-//	utiliser split sur argv
-//	sinon continuer comme d hab (ci dessous)
-	if (check_args(argc - 1, argv) == -1)
-		ft_free(list);
-	list->argc = argc - 1;
+	if (argc == 2)
+	{
+		int	i;
+		temp_split = ft_split(argv[1], ' ');
+		if (check_split(temp_split) == -1)
+			ft_free(list);
+		list->argc = temp_split[i];
+	}
+	if (argc > 2)
+	{	
+		if (check_args(argc - 1, argv) == -1)
+			ft_free(list);
+		list->argc = argc - 1;
+	}
 	list->error = 0;
 	if (init_data(list) == -1)
 		ft_free(list);
