@@ -6,7 +6,7 @@
 /*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:08:09 by aabel             #+#    #+#             */
-/*   Updated: 2023/03/10 13:38:53 by arthurabel       ###   ########.fr       */
+/*   Updated: 2023/03/13 11:55:43 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,33 @@ int	arg_to_int(t_list *list, int argc, char **argv)
 	return (0);
 }
 
-int	ft_choose_size(int argc, t_list *list)
+int	arg_to_int_split(t_list *list, char **temp_split)
+{
+	int	i;
+
+	i = 0;
+	while (temp_split[i])
+	{
+		if (check_num(&temp_split[i][0]) == -1)
+			return (-1);
+		list->sa[i] = ft_atoi(&temp_split[i][0], list);
+		if (list->atoierror == 1)
+			return (-1);
+		list->sp[i] = ft_atoi(&temp_split[i][0], list);
+		i++;
+	}
+	return (0);
+}
+
+int	ft_choose_size(t_list *list)
 {
 	if (check_same_nums(list) == -1)
 		return (-1);
 	else
 	{
-		if (argc == 3 || argc == 4)
+		if (list->argc == 3 || list->argc == 4)
 			size3(list->sa, list);
-		if (argc < 7 && argc > 4)
+		if (list->argc < 7 && list->argc > 4)
 			size5(list->sa, list);
 		// if (argc < 102 && argc > 6)
 		// 	size100(list);
@@ -89,11 +107,10 @@ int	main(int argc, char **argv)
 		return (0);
 	if (argc == 2)
 	{
-		int	i;
 		temp_split = ft_split(argv[1], ' ');
 		if (check_split(temp_split) == -1)
 			ft_free(list);
-		list->argc = temp_split[i];
+		list->argc = lensplit(temp_split);
 	}
 	if (argc > 2)
 	{	
@@ -104,14 +121,22 @@ int	main(int argc, char **argv)
 	list->error = 0;
 	if (init_data(list) == -1)
 		ft_free(list);
-	if (arg_to_int(list, argc, argv) == -1)
+	if (argc == 2)
+	{
+		if (arg_to_int_split(list, temp_split) == -1)
+		{
+			ft_free(list);
+			return (0);
+		}
+	}
+	else if(arg_to_int(list, argc, argv) == -1)
 	{
 		ft_free(list);
 		return (0);
 	}
 	if (check_order(list) == -1)
 		ft_free2(list);
-	if (ft_choose_size(argc, list) == -1)
+	if (ft_choose_size(list) == -1)
 		ft_free(list);
 	ft_free2(list);
 	return (0);

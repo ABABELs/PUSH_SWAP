@@ -6,7 +6,7 @@
 /*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:22 by aabel             #+#    #+#             */
-/*   Updated: 2023/03/01 11:47:45 by arthurabel       ###   ########.fr       */
+/*   Updated: 2023/03/13 11:47:34 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ void		size5(int *s, t_list *list);
 int	        size5_2(int *s, t_list *list, int i);
 void	    size4(int *s, t_list *list);
 int	        check_split(char **temp_split);
-
+int         lensplit(char **temp_split);
+int	        arg_to_int_split(t_list *list, char **temp_split);
+int	        ft_choose_size(t_list *list);
 #endif
