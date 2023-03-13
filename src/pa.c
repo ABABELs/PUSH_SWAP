@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 13:50:01 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/22 14:57:01 by aabel            ###   ########.fr       */
+/*   Updated: 2023/03/13 13:20:52 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,5 @@ void	pa(t_list *list)
 		i--;
 	}
 	list->sa[0] = list->sb[0];
-	// i = 0;
-	// while (i <= *list->sib)
-	// {
-	// 	list->sb[i] = list->sb[i + 1];
-	// 	i++;
-	// }
 	write(1, "pa\n", 3);
 }

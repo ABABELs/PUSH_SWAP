@@ -6,7 +6,7 @@
 /*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:22 by aabel             #+#    #+#             */
-/*   Updated: 2023/03/13 11:47:34 by arthurabel       ###   ########.fr       */
+/*   Updated: 2023/03/13 13:33:37 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void		rb(t_list *list);
 void		rr(t_list *list);
 void		rra(t_list *list);
 void		rrb(t_list *list);
+void	    rrr(t_list *list);
 void		sa(int *sa);
 void		sb(int *sb);
 void		swap(int *argv1, int *argv2);
@@ -49,4 +50,6 @@ int	        check_split(char **temp_split);
 int         lensplit(char **temp_split);
 int	        arg_to_int_split(t_list *list, char **temp_split);
 int	        ft_choose_size(t_list *list);
+t_list      ft_argc2( char **argv, t_list *list);
+t_list      ft_argc_max(int argc, char **argv, t_list *list);
 #endif

@@ -6,16 +6,16 @@
 /*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 13:59:51 by arthurabel        #+#    #+#             */
-/*   Updated: 2023/03/10 14:03:50 by arthurabel       ###   ########.fr       */
+/*   Updated: 2023/03/13 13:26:52 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int lensplit(char **temp_split)
+int	lensplit(char **temp_split)
 {
-    int i;
-    
-    i = 0;
-    while (temp_split[i])
-        i++;
-    return (i);
+	int	i;
+
+	i = 0;
+	while (temp_split[i])
+		i++;
+	return (i);
 }

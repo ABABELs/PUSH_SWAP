@@ -6,7 +6,7 @@
 /*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:10:47 by aabel             #+#    #+#             */
-/*   Updated: 2023/02/21 09:23:39 by arthurabel       ###   ########.fr       */
+/*   Updated: 2023/03/13 13:50:26 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_putnbr_hexa(unsigned long nbr, const char input, int init)
 {
 	char			*hexa;
-//	unsigned long	nbr_modulo;
 	static int		n;
 
 	n = init;
@@ -25,7 +24,6 @@ int	ft_putnbr_hexa(unsigned long nbr, const char input, int init)
 		hexa = "0123456789abcdef";
 	if (nbr < 16 && n != -1)
 	{
-//		nbr_modulo = nbr % 16;
 		if (ft_putchar(hexa[nbr]) == -1)
 			return (-1);
 		n++;

@@ -6,7 +6,7 @@
 /*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:08:09 by aabel             #+#    #+#             */
-/*   Updated: 2023/03/13 11:55:43 by arthurabel       ###   ########.fr       */
+/*   Updated: 2023/03/13 13:30:01 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,10 @@ int	ft_choose_size(t_list *list)
 			size3(list->sa, list);
 		if (list->argc < 7 && list->argc > 4)
 			size5(list->sa, list);
-		// if (argc < 102 && argc > 6)
-		// 	size100(list);
-		// if (argc > 101)
-		// 	size500(list);
+//		 if (argc < 102 && argc > 6)
+//		 	size100(list);
+//		 if (argc > 101)
+//		 	size500(list);
 	}
 	return (0);
 }
@@ -98,7 +98,6 @@ int	ft_choose_size(t_list *list)
 int	main(int argc, char **argv)
 {
 	t_list	*list;
-	char	**temp_split;
 
 	if (argc == 1)
 		return (0);
@@ -106,33 +105,10 @@ int	main(int argc, char **argv)
 	if (!list)
 		return (0);
 	if (argc == 2)
+		*list = ft_argc2(argv, list);
+	else if (argc > 2)
 	{
-		temp_split = ft_split(argv[1], ' ');
-		if (check_split(temp_split) == -1)
-			ft_free(list);
-		list->argc = lensplit(temp_split);
-	}
-	if (argc > 2)
-	{	
-		if (check_args(argc - 1, argv) == -1)
-			ft_free(list);
-		list->argc = argc - 1;
-	}
-	list->error = 0;
-	if (init_data(list) == -1)
-		ft_free(list);
-	if (argc == 2)
-	{
-		if (arg_to_int_split(list, temp_split) == -1)
-		{
-			ft_free(list);
-			return (0);
-		}
-	}
-	else if(arg_to_int(list, argc, argv) == -1)
-	{
-		ft_free(list);
-		return (0);
+		*list = ft_argc_max(argc, argv, list);
 	}
 	if (check_order(list) == -1)
 		ft_free2(list);

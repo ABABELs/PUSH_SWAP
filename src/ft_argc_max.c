@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_order.c                                      :+:      :+:    :+:   */
+/*   ft_argc_max.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arthurabel <arthurabel@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 11:55:11 by aabel             #+#    #+#             */
-/*   Updated: 2023/03/13 13:21:25 by arthurabel       ###   ########.fr       */
+/*   Created: 2023/03/13 13:04:10 by arthurabel        #+#    #+#             */
+/*   Updated: 2023/03/13 13:29:29 by arthurabel       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	check_order(t_list *list)
+t_list	ft_argc_max(int argc, char **argv, t_list *list)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (j < list->argc - 1)
+	if (check_args(argc - 1, argv) == -1)
+		ft_free(list);
+	list->argc = argc - 1;
+	list->error = 0;
+	if (init_data(list) == -1)
+		ft_free(list);
+	if (arg_to_int(list, argc, argv) == -1)
 	{
-		if (list->sa[j] < list->sa[j + 1])
-			i++;
-		j++;
+		ft_free(list);
 	}
-	if (i == j)
-		return (-1);
-	else
-		return (0);
+	return (*list);
 }
